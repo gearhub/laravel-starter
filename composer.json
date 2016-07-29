@@ -2,6 +2,7 @@
   "name": "gear/laravel-starter",
   "description": "Gear Laravel Starter",
   "type": "project",
+  "license": "MIT",
   "authors": [
     {
       "name": "Jeff Hertzler",
