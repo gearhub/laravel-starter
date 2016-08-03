@@ -17,9 +17,9 @@ class TransactionMiddleware implements Middleware
      */
     public function execute($command, callable $next)
     {
-      return DB::transaction(function() use($command, $next) {
-        return $next($command);
-      });
+        return DB::transaction(function() use($command, $next) {
+            return $next($command);
+        });
     }
 }
 
