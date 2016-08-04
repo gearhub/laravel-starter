@@ -38,11 +38,11 @@ class ResponseBuilder
      *
      * @return Illuminate\Http\JsonResponse
      */
-    public function withCollection($collection, $transformer, $key = 'data')
+    public function withCollection($collection, $transformer, $key = 'data', $status = 200)
     {
         $resource = new FractalCollection($collection, $transformer, $key);
 
-        return response()->json($this->build($resource));
+        return response()->json($this->build($resource), $status);
     }
 
     /**
@@ -54,11 +54,11 @@ class ResponseBuilder
      *
      * @return Illuminate\Http\JsonResponse
      */
-    public function withItem($item, $transformer, $key = 'data')
+    public function withItem($item, $transformer, $key = 'data', $status = 200)
     {
         $resource = new FractalItem($item, $transformer, $key);
 
-        return response()->json($this->build($resource));
+        return response()->json($this->build($resource), $status);
     }
 
     /**
@@ -70,12 +70,12 @@ class ResponseBuilder
      *
      * @return Illuminate\Http\JsonResponse
      */
-    public function withPaginator($paginator, $transformer, $key = 'data')
+    public function withPaginator($paginator, $transformer, $key = 'data', $status = 200)
     {
         $resource = new FractalCollection($paginator->getCollection(), $transformer, $key);
         $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
 
-        return response()->json($this->build($resource));
+        return response()->json($this->build($resource), $status);
     }
 
     /**
