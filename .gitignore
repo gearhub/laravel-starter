@@ -1,8 +1,8 @@
-/vendor
 /node_modules
 /public/storage
+/vendor
 /.idea
-Homestead.yaml
 Homestead.json
+Homestead.yaml
 .env
 /.vagrant
