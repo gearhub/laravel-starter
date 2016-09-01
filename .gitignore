@@ -2,7 +2,8 @@
 /public/storage
 /vendor
 /.idea
+/.vagrant
 Homestead.json
 Homestead.yaml
 .env
-/.vagrant
+.DS_Store
